@@ -7,7 +7,7 @@
 
 ### SpaceShooter
 
-- 2장
+- [2장](https://github.com/IndieGameMaker/SpaceShooter2021/releases/tag/2장)
 - 3장
 - 4장
 - 5장
