@@ -24,13 +24,10 @@ public class PlayerCtrl : MonoBehaviour
         Debug.Log("h=" + h);
         Debug.Log("v=" + v);
 
-        // Transform 컴포넌트의 위치를 변경
-        // transform.position += new Vector3(0, 0, 1);
+        // 전후좌우 이동 방향 벡터 계산
+        Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
 
-        // 정규화 벡터를 사용한 코드
-        // tr.position += Vector3.forward * 1;
-
-        // Translate 함수를 사용한 이동 로직
-        tr.Translate(Vector3.forward * Time.deltaTime * v * moveSpeed);
+        // Translate(이동 방향 * 속력 * Time.deltaTime)
+        tr.Translate(moveDir * moveSpeed * Time.deltaTime);
     }
 }
