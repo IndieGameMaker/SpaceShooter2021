@@ -25,6 +25,9 @@ public class PlayerCtrl : MonoBehaviour
         // transform.position += new Vector3(0, 0, 1);
 
         // 정규화 벡터를 사용한 코드
-        tr.position += Vector3.forward * 1;
+        // tr.position += Vector3.forward * 1;
+
+        // Translate 함수를 사용한 이동 로직
+        tr.Translate(Vector3.forward * 1);
     }
 }
