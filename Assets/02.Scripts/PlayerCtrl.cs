@@ -17,7 +17,10 @@ public class PlayerCtrl : MonoBehaviour
         Debug.Log("h=" + h);
         Debug.Log("v=" + v);
 
-        // Transform 컴포넌트의 position 속성값을 변경
-        transform.position += new Vector3(0, 0, 1);
+        // Transform 컴포넌트의 위치를 변경
+        // transform.position += new Vector3(0, 0, 1);
+
+        // 정규화 벡터를 사용한 코드
+        transform.position += Vector3.forward * 1;
     }
 }
