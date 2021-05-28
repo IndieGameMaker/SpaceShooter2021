@@ -28,6 +28,6 @@ public class PlayerCtrl : MonoBehaviour
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
 
         // Translate(이동 방향 * 속력 * Time.deltaTime)
-        tr.Translate(moveDir * moveSpeed * Time.deltaTime);
+        tr.Translate(moveDir.normalized * moveSpeed * Time.deltaTime);
     }
 }
