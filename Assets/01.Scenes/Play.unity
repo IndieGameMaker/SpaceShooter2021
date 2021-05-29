@@ -593,7 +593,8 @@ MonoBehaviour:
   targetTr: {fileID: 1230189173}
   distance: 3
   height: 2
-  damping: 10
+  damping: 0.1
+  targetOffset: 2
 --- !u!137 &1195299244 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 13700000, guid: f3cd25b3bf53c4adaaf087d862e435e6, type: 3}

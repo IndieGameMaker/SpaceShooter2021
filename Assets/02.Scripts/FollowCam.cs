@@ -20,6 +20,9 @@ public class FollowCam : MonoBehaviour
     // 반응 속도
     public float damping = 10.0f;
 
+    // 카메라 LookAt의 Offset 값
+    public float targetOffset = 2.0f;
+
     // SmoothDamp에서 사용할 변수
     private Vector3 velocity = Vector3.zero;
 
@@ -49,6 +52,6 @@ public class FollowCam : MonoBehaviour
                                             damping);       // 목표 위치까지 도달할 시간
 
         // Camera를 피벗 좌표를 향해 회전
-        camTr.LookAt(targetTr.position);
+        camTr.LookAt(targetTr.position + (targetTr.up * targetOffset));
     }
 }
