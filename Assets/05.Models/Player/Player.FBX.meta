@@ -1,102 +1,290 @@
 fileFormatVersion: 2
 guid: f3cd25b3bf53c4adaaf087d862e435e6
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: Rthumb
-    100002: Rcalf
-    100004: Lforearm
-    100006: slade_mesh
-    100008: Rforearm
-    100010: Lthigh
-    100012: Rweaponholder
-    100014: stomach
-    100016: pelvis
-    100018: slade_meshLod2
-    100020: head
-    100022: neck
-    100024: chest
-    100026: Rfoot
-    100028: Ribs
-    100030: slade_meshLod1
-    100032: Rthigh
-    100034: Lfoot
-    100036: Lthumb
-    100038: Lwrist
-    100040: Lfingers
-    100042: Larm
-    100044: Lshoulder
-    100046: //RootNode
-    100048: Rfingers
-    100050: Rwrist
-    100052: Rarm
-    100054: Rshoulder
-    100056: Lcalf
-    100058: Hat_Target
-    400000: Rthumb
-    400002: Rcalf
-    400004: Lforearm
-    400006: slade_mesh
-    400008: Rforearm
-    400010: Lthigh
-    400012: Rweaponholder
-    400014: stomach
-    400016: pelvis
-    400018: slade_meshLod2
-    400020: head
-    400022: neck
-    400024: chest
-    400026: Rfoot
-    400028: Ribs
-    400030: slade_meshLod1
-    400032: Rthigh
-    400034: Lfoot
-    400036: Lthumb
-    400038: Lwrist
-    400040: Lfingers
-    400042: Larm
-    400044: Lshoulder
-    400046: //RootNode
-    400048: Rfingers
-    400050: Rwrist
-    400052: Rarm
-    400054: Rshoulder
-    400056: Lcalf
-    400058: Hat_Target
-    4300000: slade_mesh
-    4300002: slade_meshLod1
-    4300004: slade_meshLod2
-    4300006: assasin_mesh
-    4300008: sherrif_mesh
-    4300010: dancer_mesh
-    4300012: beast_mesh
-    4300014: widow_mesh
-    4300016: toltech_mesh
-    4300018: sara_mesh
-    4300020: mutant_mesh
-    4300022: toltech_meshLod1
-    4300024: toltech_meshLod2
-    4300026: sherrif_meshLod1
-    4300028: sherrif_meshLod2
-    4300030: assasin_meshLod1
-    4300032: assasin_meshLod2
-    4300034: beast_meshLod1
-    4300036: beast_meshLod2
-    4300038: mutant_meshLod1
-    4300040: mutant_meshLod2
-    4300042: sara_meshLod1
-    4300044: sara_meshLod2
-    4300046: widow_meshLod1
-    4300048: widow_meshLod2
-    4300050: dancer_meshLod1
-    4300052: dancer_meshLod2
-    7400002: Take 001
-    9500000: //RootNode
-    11100000: //RootNode
-    13700000: slade_mesh
-    13700002: slade_meshLod2
-    13700004: slade_meshLod1
-    2186277476908879412: ImportLogs
+  serializedVersion: 21100
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Rthumb
+  - first:
+      1: 100002
+    second: Rcalf
+  - first:
+      1: 100004
+    second: Lforearm
+  - first:
+      1: 100006
+    second: slade_mesh
+  - first:
+      1: 100008
+    second: Rforearm
+  - first:
+      1: 100010
+    second: Lthigh
+  - first:
+      1: 100012
+    second: Rweaponholder
+  - first:
+      1: 100014
+    second: stomach
+  - first:
+      1: 100016
+    second: pelvis
+  - first:
+      1: 100018
+    second: slade_meshLod2
+  - first:
+      1: 100020
+    second: head
+  - first:
+      1: 100022
+    second: neck
+  - first:
+      1: 100024
+    second: chest
+  - first:
+      1: 100026
+    second: Rfoot
+  - first:
+      1: 100028
+    second: Ribs
+  - first:
+      1: 100030
+    second: slade_meshLod1
+  - first:
+      1: 100032
+    second: Rthigh
+  - first:
+      1: 100034
+    second: Lfoot
+  - first:
+      1: 100036
+    second: Lthumb
+  - first:
+      1: 100038
+    second: Lwrist
+  - first:
+      1: 100040
+    second: Lfingers
+  - first:
+      1: 100042
+    second: Larm
+  - first:
+      1: 100044
+    second: Lshoulder
+  - first:
+      1: 100046
+    second: //RootNode
+  - first:
+      1: 100048
+    second: Rfingers
+  - first:
+      1: 100050
+    second: Rwrist
+  - first:
+      1: 100052
+    second: Rarm
+  - first:
+      1: 100054
+    second: Rshoulder
+  - first:
+      1: 100056
+    second: Lcalf
+  - first:
+      1: 100058
+    second: Hat_Target
+  - first:
+      4: 400000
+    second: Rthumb
+  - first:
+      4: 400002
+    second: Rcalf
+  - first:
+      4: 400004
+    second: Lforearm
+  - first:
+      4: 400006
+    second: slade_mesh
+  - first:
+      4: 400008
+    second: Rforearm
+  - first:
+      4: 400010
+    second: Lthigh
+  - first:
+      4: 400012
+    second: Rweaponholder
+  - first:
+      4: 400014
+    second: stomach
+  - first:
+      4: 400016
+    second: pelvis
+  - first:
+      4: 400018
+    second: slade_meshLod2
+  - first:
+      4: 400020
+    second: head
+  - first:
+      4: 400022
+    second: neck
+  - first:
+      4: 400024
+    second: chest
+  - first:
+      4: 400026
+    second: Rfoot
+  - first:
+      4: 400028
+    second: Ribs
+  - first:
+      4: 400030
+    second: slade_meshLod1
+  - first:
+      4: 400032
+    second: Rthigh
+  - first:
+      4: 400034
+    second: Lfoot
+  - first:
+      4: 400036
+    second: Lthumb
+  - first:
+      4: 400038
+    second: Lwrist
+  - first:
+      4: 400040
+    second: Lfingers
+  - first:
+      4: 400042
+    second: Larm
+  - first:
+      4: 400044
+    second: Lshoulder
+  - first:
+      4: 400046
+    second: //RootNode
+  - first:
+      4: 400048
+    second: Rfingers
+  - first:
+      4: 400050
+    second: Rwrist
+  - first:
+      4: 400052
+    second: Rarm
+  - first:
+      4: 400054
+    second: Rshoulder
+  - first:
+      4: 400056
+    second: Lcalf
+  - first:
+      4: 400058
+    second: Hat_Target
+  - first:
+      43: 4300000
+    second: slade_mesh
+  - first:
+      43: 4300002
+    second: slade_meshLod1
+  - first:
+      43: 4300004
+    second: slade_meshLod2
+  - first:
+      43: 4300006
+    second: assasin_mesh
+  - first:
+      43: 4300008
+    second: sherrif_mesh
+  - first:
+      43: 4300010
+    second: dancer_mesh
+  - first:
+      43: 4300012
+    second: beast_mesh
+  - first:
+      43: 4300014
+    second: widow_mesh
+  - first:
+      43: 4300016
+    second: toltech_mesh
+  - first:
+      43: 4300018
+    second: sara_mesh
+  - first:
+      43: 4300020
+    second: mutant_mesh
+  - first:
+      43: 4300022
+    second: toltech_meshLod1
+  - first:
+      43: 4300024
+    second: toltech_meshLod2
+  - first:
+      43: 4300026
+    second: sherrif_meshLod1
+  - first:
+      43: 4300028
+    second: sherrif_meshLod2
+  - first:
+      43: 4300030
+    second: assasin_meshLod1
+  - first:
+      43: 4300032
+    second: assasin_meshLod2
+  - first:
+      43: 4300034
+    second: beast_meshLod1
+  - first:
+      43: 4300036
+    second: beast_meshLod2
+  - first:
+      43: 4300038
+    second: mutant_meshLod1
+  - first:
+      43: 4300040
+    second: mutant_meshLod2
+  - first:
+      43: 4300042
+    second: sara_meshLod1
+  - first:
+      43: 4300044
+    second: sara_meshLod2
+  - first:
+      43: 4300046
+    second: widow_meshLod1
+  - first:
+      43: 4300048
+    second: widow_meshLod2
+  - first:
+      43: 4300050
+    second: dancer_meshLod1
+  - first:
+      43: 4300052
+    second: dancer_meshLod2
+  - first:
+      74: 7400002
+    second: Take 001
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      111: 11100000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: slade_mesh
+  - first:
+      137: 13700002
+    second: slade_meshLod2
+  - first:
+      137: 13700004
+    second: slade_meshLod1
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -104,7 +292,7 @@ ModelImporter:
       name: 01 - Defaultd
     second: {fileID: 2100000, guid: 1b7c6da276d564d30b27a2b8d1b9b5dd, type: 2}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -122,7 +310,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -133,6 +321,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Take 001
       takeName: Take 001
+      internalID: 0
       firstFrame: 0
       lastFrame: 270
       wrapMode: 0
@@ -224,21 +413,31 @@ ModelImporter:
     globalScale: 0.01
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 0
   tangentSpace:
@@ -246,10 +445,13 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 4
     normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -259,14 +461,17 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 0.01
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 1
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
