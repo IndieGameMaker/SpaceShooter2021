@@ -13,8 +13,13 @@ public class RemoveBullet : MonoBehaviour
         // 충돌한 게임오브젝트의 태그값 비교
         if (coll.collider.CompareTag("BULLET"))
         {
+            // 첫 번째 충돌 지점의 정보 추출
+            ContactPoint cp = coll.GetContact(0);
+            // 충돌한 총알의 법선 벡터를 쿼터니언 타입으로 변환
+            Quaternion rot = Quaternion.LookRotation(-cp.normal);
+
             // 스파크 파티클을 동적으로 생성
-            Instantiate(sparkEffect, coll.transform.position, Quaternion.identity);
+            Instantiate(sparkEffect, cp.point, rot);
 
             // 충돌한 게임오브젝트 삭제
             Destroy(coll.gameObject);
