@@ -19,7 +19,9 @@ public class RemoveBullet : MonoBehaviour
             Quaternion rot = Quaternion.LookRotation(-cp.normal);
 
             // 스파크 파티클을 동적으로 생성
-            Instantiate(sparkEffect, cp.point, rot);
+            GameObject spark = Instantiate(sparkEffect, cp.point, rot);
+            // 일정 시간이 지난 후 스파크 파티클을 삭제
+            Destroy(spark, 0.5f);
 
             // 충돌한 게임오브젝트 삭제
             Destroy(coll.gameObject);
