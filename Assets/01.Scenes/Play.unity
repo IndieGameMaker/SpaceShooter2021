@@ -1088,6 +1088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 3893312438420738052, guid: e7a884bbca4c74192be0375871b8df18, type: 3}
   firePos: {fileID: 924068563}
+  fireSfx: {fileID: 8300000, guid: 641ff25f5da444ddf8874d961a56f0c9, type: 3}
 --- !u!1001 &1239630453
 PrefabInstance:
   m_ObjectHideFlags: 0
