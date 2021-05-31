@@ -15,10 +15,17 @@ public class FireCtrl : MonoBehaviour
 
     // AudioSource 컴포넌트를 저장할 변수
     private new AudioSource audio;
+    // Muzzle Flash의 MeshRenderer 컴포넌트
+    private MeshRenderer muzzleFlash;
 
     void Start()
     {
         audio = GetComponent<AudioSource>();
+
+        // FirePos 하위에 있는 MuzzleFlash의 Material 컴포넌트를 추출
+        muzzleFlash = firePos.GetComponentInChildren<MeshRenderer>();
+        // 처음 시작할 때 비활성화
+        muzzleFlash.enabled = false;
     }
 
     void Update()
