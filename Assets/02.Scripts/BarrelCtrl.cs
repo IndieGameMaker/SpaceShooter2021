@@ -6,6 +6,10 @@ public class BarrelCtrl : MonoBehaviour
 {
     // 폭발 효과 파티클을 연결할 변수
     public GameObject expEffect;
+    // 무작위로 적용할 텍스처 배열
+    public Texture[] textures;
+    // 하위에 있는 Mesh Renderer 컴포넌트를 저장할 변수 
+    private new MeshRenderer renderer;
 
     // 컴포넌트를 저장할 변수
     private Transform tr;
@@ -18,6 +22,13 @@ public class BarrelCtrl : MonoBehaviour
     {
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
+        // 하위에 있는 MeshRenderer 컴포넌트를 추출
+        renderer = GetComponentInChildren<MeshRenderer>();
+
+        // 난수 발생
+        int idx = Random.Range(0, textures.Length);
+        // 텍스처 지정
+        renderer.material.mainTexture = textures[idx];
     }
 
     // 충돌 시 발생하는 콜백 함수
