@@ -31,6 +31,11 @@ public class MonsterCtrl : MonoBehaviour
     private NavMeshAgent agent;
     private Animator anim;
 
+    // Animator 파라미터의 해시값 추출
+    private readonly int hashTrace = Animator.StringToHash("IsTrace");
+    private readonly int hashAttack = Animator.StringToHash("IsAttack");
+    private readonly int hashHit = Animator.StringToHash("Hit");
+
     void Start()
     {
         // 몬스터의 Transform 할당
@@ -90,8 +95,9 @@ public class MonsterCtrl : MonoBehaviour
                 case State.IDLE:
                     // 추적 중지
                     agent.isStopped = true;
+
                     // Animator의 IsTrace 변수를 false로 설정
-                    anim.SetBool("IsTrace", false);
+                    anim.SetBool(hashTrace, false);
                     break;
 
                 // 추적 상태
@@ -99,12 +105,18 @@ public class MonsterCtrl : MonoBehaviour
                     // 추적 대상의 좌표로 이동 시작
                     agent.SetDestination(playerTr.position);
                     agent.isStopped = false;
+
                     // Animator의 IsTrace 변수를 true로 설정
-                    anim.SetBool("IsTrace", true);
+                    anim.SetBool(hashTrace, true);
+
+                    // Animator의 IsAttack 변수를 false로 설정
+                    anim.SetBool(hashAttack, false);
                     break;
 
                 // 공격 상태
                 case State.ATTACK:
+                    // Animator의 IsAttack 변수를 true로 설정
+                    anim.SetBool(hashAttack, true);
                     break;
 
                 // 사망
@@ -112,6 +124,17 @@ public class MonsterCtrl : MonoBehaviour
                     break;
             }
             yield return new WaitForSeconds(0.3f);
+        }
+    }
+
+    void OnCollisionEnter(Collision coll)
+    {
+        if (coll.collider.CompareTag("BULLET"))
+        {
+            // 충돌한 총알을 삭제
+            Destroy(coll.gameObject);
+            // 피격 리액션 애니메이션 실행
+            anim.SetTrigger(hashHit);
         }
     }
 
