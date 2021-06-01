@@ -11,7 +11,6 @@ public class MonsterCtrl : MonoBehaviour
     public enum State
     {
         IDLE,
-        PATROL,
         TRACE,
         ATTACK,
         DIE
@@ -43,10 +42,12 @@ public class MonsterCtrl : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
         // 추적 대상의 위치를 설정하면 바로 추적 시작
-        // agent.destination = playerTr.position;
+        //agent.destination = playerTr.position;
 
         // 몬스터의 상태를 체크하는 코루틴 함수 호출
         StartCoroutine(CheckMonsterState());
+        // 상태에 따라 몬스터의 행동을 수행하는 코루틴 함수 호출
+        StartCoroutine(MonsterAction());
     }
 
     // 일정한 간격으로 몬스터의 행동 상태를 체크
@@ -74,6 +75,38 @@ public class MonsterCtrl : MonoBehaviour
             {
                 state = State.IDLE;
             }
+        }
+    }
+
+    // 몬스터의 상태에 따라 몬스터의 동작을 수행
+    IEnumerator MonsterAction()
+    {
+        while (!isDie)
+        {
+            switch (state)
+            {
+                // IDLE 상태
+                case State.IDLE:
+                    // 추적 중지
+                    agent.isStopped = true;
+                    break;
+
+                // 추적 상태
+                case State.TRACE:
+                    // 추적 대상의 좌표로 이동 시작
+                    agent.SetDestination(playerTr.position);
+                    agent.isStopped = false;
+                    break;
+
+                // 공격 상태
+                case State.ATTACK:
+                    break;
+
+                // 사망
+                case State.DIE:
+                    break;
+            }
+            yield return new WaitForSeconds(0.3f);
         }
     }
 
