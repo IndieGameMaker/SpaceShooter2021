@@ -19,6 +19,11 @@ public class PlayerCtrl : MonoBehaviour
     // 현재 생명 값
     public float currHp;
 
+    // 델리게이트 선언
+    public delegate void PlayerDieHandler();
+    // 이벤트 선언
+    public static event PlayerDieHandler OnPlayerDie;
+
     IEnumerator Start()
     {
         // 컴포넌트를 추출해 변수에 대입
@@ -101,13 +106,16 @@ public class PlayerCtrl : MonoBehaviour
     {
         Debug.Log("Player Die !");
 
-        // MONSTER 태그를 가진 모든 게임오브젝트를 찾아옴
-        GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
+        // // MONSTER 태그를 가진 모든 게임오브젝트를 찾아옴
+        // GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
 
-        // 모든 몬스터의 OnPlayerDie 함수를 순차적으로 호출
-        foreach (GameObject monster in monsters)
-        {
-            monster.SendMessage("OnPlayerDie", SendMessageOptions.DontRequireReceiver);
-        }
+        // // 모든 몬스터의 OnPlayerDie 함수를 순차적으로 호출
+        // foreach (GameObject monster in monsters)
+        // {
+        //     monster.SendMessage("OnPlayerDie", SendMessageOptions.DontRequireReceiver);
+        // }
+
+        // 주인공 사망 이벤트 호출(발생)
+        OnPlayerDie();
     }
 }
