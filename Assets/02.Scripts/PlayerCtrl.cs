@@ -14,6 +14,11 @@ public class PlayerCtrl : MonoBehaviour
     // 회전 속도 변수
     public float turnSpeed = 80.0f;
 
+    // 초기 생명 값
+    private readonly float initHp = 100.0f;
+    // 현재 생명 값
+    public float currHp;
+
     IEnumerator Start()
     {
         // 컴포넌트를 추출해 변수에 대입
@@ -73,5 +78,27 @@ public class PlayerCtrl : MonoBehaviour
         {
             anim.CrossFade("Idle", 0.25f);   // 정지 시 Idle 애니메이션 실행
         }
+    }
+
+    // 충돌한 Collider의 IsTrigger 옵션이 체크됐을 때 발생
+    void OnTriggerEnter(Collider coll)
+    {
+        // 충돌한 Collider가 몬스터의 PUNCH이면 Player의 HP 차감
+        if (currHp >= 0.0f && coll.CompareTag("PUNCH"))
+        {
+            currHp -= 10.0f;
+            Debug.Log($"Player hp = {currHp / initHp}");
+            // Player의 생명이 0 이하이면 사망 처리
+            if (currHp <= 0.0f)
+            {
+                PlayerDie();
+            }
+        }
+    }
+
+    // Player의 사망 처리
+    void PlayerDie()
+    {
+        Debug.Log("Player Die !");
     }
 }
