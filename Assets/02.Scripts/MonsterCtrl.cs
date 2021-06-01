@@ -36,6 +36,7 @@ public class MonsterCtrl : MonoBehaviour
     private readonly int hashAttack = Animator.StringToHash("IsAttack");
     private readonly int hashHit = Animator.StringToHash("Hit");
     private readonly int hashPlayerDie = Animator.StringToHash("PlayerDie");
+    private readonly int hashSpeed = Animator.StringToHash("Speed");
 
     // 혈흔 효과 프리팹
     private GameObject bloodEffect;
