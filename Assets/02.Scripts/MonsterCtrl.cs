@@ -29,6 +29,7 @@ public class MonsterCtrl : MonoBehaviour
     private Transform monsterTr;
     private Transform playerTr;
     private NavMeshAgent agent;
+    private Animator anim;
 
     void Start()
     {
@@ -41,8 +42,8 @@ public class MonsterCtrl : MonoBehaviour
         // NavMeshAgent 컴포넌트 할당
         agent = GetComponent<NavMeshAgent>();
 
-        // 추적 대상의 위치를 설정하면 바로 추적 시작
-        //agent.destination = playerTr.position;
+        // Animator 컴포넌트 할당
+        anim = GetComponent<Animator>();
 
         // 몬스터의 상태를 체크하는 코루틴 함수 호출
         StartCoroutine(CheckMonsterState());
@@ -89,6 +90,8 @@ public class MonsterCtrl : MonoBehaviour
                 case State.IDLE:
                     // 추적 중지
                     agent.isStopped = true;
+                    // Animator의 IsTrace 변수를 false로 설정
+                    anim.SetBool("IsTrace", false);
                     break;
 
                 // 추적 상태
@@ -96,6 +99,8 @@ public class MonsterCtrl : MonoBehaviour
                     // 추적 대상의 좌표로 이동 시작
                     agent.SetDestination(playerTr.position);
                     agent.isStopped = false;
+                    // Animator의 IsTrace 변수를 true로 설정
+                    anim.SetBool("IsTrace", true);
                     break;
 
                 // 공격 상태
