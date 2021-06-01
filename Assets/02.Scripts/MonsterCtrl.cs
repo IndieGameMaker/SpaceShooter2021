@@ -37,9 +37,13 @@ public class MonsterCtrl : MonoBehaviour
     private readonly int hashHit = Animator.StringToHash("Hit");
     private readonly int hashPlayerDie = Animator.StringToHash("PlayerDie");
     private readonly int hashSpeed = Animator.StringToHash("Speed");
+    private readonly int hashDie = Animator.StringToHash("Die");
 
     // 혈흔 효과 프리팹
     private GameObject bloodEffect;
+
+    // 몬스터 생명 변수
+    private int hp = 100;
 
     // 스크립트가 활성화될 때마다 호출되는 함수
     void OnEnable()
@@ -85,6 +89,9 @@ public class MonsterCtrl : MonoBehaviour
         {
             // 0.3초 동안 중지(대기)하는 동안 제어권을 메시지 루프에 양보
             yield return new WaitForSeconds(0.3f);
+
+            // 몬스터의 상태가 DIE일 때 코루틴을 종료
+            if (state == State.DIE) yield break;
 
             // 몬스터와 주인공 캐릭터 사이의 거리 측정
             float distance = Vector3.Distance(playerTr.position, monsterTr.position);
@@ -143,6 +150,16 @@ public class MonsterCtrl : MonoBehaviour
 
                 // 사망
                 case State.DIE:
+                    isDie = true;
+
+                    // 추적 정지
+                    agent.isStopped = true;
+
+                    // 사망 애니메이션 실행
+                    anim.SetTrigger(hashDie);
+
+                    // 몬스터의 Collider 컴포넌트 비활성화
+                    GetComponent<CapsuleCollider>().enabled = false;
                     break;
             }
             yield return new WaitForSeconds(0.3f);
@@ -164,6 +181,14 @@ public class MonsterCtrl : MonoBehaviour
             Quaternion rot = Quaternion.LookRotation(-coll.GetContact(0).normal);
             // 혈흔 효과를 생성하는 함수 호출
             ShowBloodEffect(pos, rot);
+
+            // 몬스터의 hp 차감
+            hp -= 10;
+
+            if (hp <= 0)
+            {
+                state = State.DIE;
+            }
         }
     }
 
@@ -202,6 +227,7 @@ public class MonsterCtrl : MonoBehaviour
 
         // 추적을 정지하고 애니메이션을 수행
         agent.isStopped = true;
+        anim.SetFloat(hashSpeed, Random.Range(0.8f, 1.2f)); // 스크립트 6-10 에서 추가해야 하는 코드
         anim.SetTrigger(hashPlayerDie);
     }
 }
