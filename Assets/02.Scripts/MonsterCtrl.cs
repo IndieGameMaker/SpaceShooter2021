@@ -173,4 +173,9 @@ public class MonsterCtrl : MonoBehaviour
             Gizmos.DrawWireSphere(transform.position, attackDist);
         }
     }
+
+    void OnTriggerEnter(Collider coll)
+    {
+        Debug.Log(coll.gameObject.name);
+    }
 }
