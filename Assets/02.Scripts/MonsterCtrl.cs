@@ -41,6 +41,20 @@ public class MonsterCtrl : MonoBehaviour
     // 혈흔 효과 프리팹
     private GameObject bloodEffect;
 
+    // 스크립트가 활성화될 때마다 호출되는 함수
+    void OnEnable()
+    {
+        // 이벤트 발생 시 수행할 함수 연결
+        PlayerCtrl.OnPlayerDie += this.OnPlayerDie;
+    }
+
+    // 스크립트가 비활성화될 때마다 호출되는 함수
+    void OnDisable()
+    {
+        // 기존에 연결된 함수 해제
+        PlayerCtrl.OnPlayerDie -= this.OnPlayerDie;
+    }
+
     void Start()
     {
         // 몬스터의 Transform 할당
