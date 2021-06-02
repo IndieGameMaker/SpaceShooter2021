@@ -26,6 +26,9 @@ public class PlayerCtrl : MonoBehaviour
 
     IEnumerator Start()
     {
+        // HP 초기화
+        currHp = initHp;
+
         // 컴포넌트를 추출해 변수에 대입
         tr = GetComponent<Transform>();
         anim = GetComponent<Animation>();
