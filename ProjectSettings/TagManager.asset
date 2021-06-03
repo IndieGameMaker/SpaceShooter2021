@@ -8,6 +8,7 @@ TagManager:
   - PLAYER
   - PUNCH
   - MONSTER
+  - HP_BAR
   layers:
   - Default
   - TransparentFX
