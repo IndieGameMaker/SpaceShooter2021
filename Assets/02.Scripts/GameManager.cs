@@ -30,6 +30,26 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // 싱글턴 인스턴스 선언
+    public static GameManager instance = null;
+
+    // 스크립트가 실행되면 가장 먼저 호출되는 유니티 이벤트 함수
+    void Awake()
+    {
+        // instance가 할당되지 않았을 경우
+        if (instance == null)
+        {
+            instance = this;
+        }
+        // instance에 할당된 클래스의 인스턴스가 다를 경우 새로 생성된 클래스를 의미함
+        else if (instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        // 다른 씬으로 넘어가더라도 삭제하지 않고 유지함
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     void Start()
     {
         // SpawnPointGroup 게임오브젝트의 Transform 컴포넌트 추출
