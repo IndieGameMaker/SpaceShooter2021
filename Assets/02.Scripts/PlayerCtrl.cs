@@ -117,17 +117,11 @@ public class PlayerCtrl : MonoBehaviour
     {
         Debug.Log("Player Die !");
 
-        // // MONSTER 태그를 가진 모든 게임오브젝트를 찾아옴
-        // GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
-
-        // // 모든 몬스터의 OnPlayerDie 함수를 순차적으로 호출
-        // foreach (GameObject monster in monsters)
-        // {
-        //     monster.SendMessage("OnPlayerDie", SendMessageOptions.DontRequireReceiver);
-        // }
-
         // 주인공 사망 이벤트 호출(발생)
         OnPlayerDie();
+
+        // GameManager 스크립트의 IsGameOver 프로퍼티 값을 변경
+        GameObject.Find("GameMgr").GetComponent<GameManager>().IsGameOver = true;
     }
 
     void DisplayHealth()
