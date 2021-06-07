@@ -157,6 +157,7 @@ MonoBehaviour:
   maxMonsters: 10
   monster: {fileID: 3167201029452550670, guid: 635b8e24bdc1c4b7b91f068e2c3eda0a, type: 3}
   createTime: 3
+  scoreText: {fileID: 1842873951}
 --- !u!4 &84145151
 Transform:
   m_ObjectHideFlags: 0
@@ -3456,7 +3457,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3485,7 +3486,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 16.175224, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
