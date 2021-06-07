@@ -83,7 +83,16 @@ public class GameManager : MonoBehaviour
         int idx = Random.Range(0, points.Count);
 
         // 몬스터 프리팹 생성
-        Instantiate(monster, points[idx].position, points[idx].rotation);
+        //Instantiate(monster, points[idx].position, points[idx].rotation);
+
+        // 오브젝트 풀에서 몬스터 추출
+        GameObject _monster = GetMonsterInPool();
+        // 추출한 몬스터의 위치와 회전을 설정
+        _monster?.transform.SetPositionAndRotation(points[idx].position,
+                                                   points[idx].rotation);
+
+        // 추출한 몬스터를 활성화
+        _monster?.SetActive(true);
     }
 
     // 오브젝트 풀에 몬스터 생성
@@ -102,4 +111,21 @@ public class GameManager : MonoBehaviour
             monsterPool.Add(_monster);
         }
     }
+
+    // 오브젝트 풀에서 사용 가능한 몬스터를 추출해 반환하는 함수
+    public GameObject GetMonsterInPool()
+    {
+        // 오브젝트 풀의 처음부터 끝까지 순회
+        foreach (var _monster in monsterPool)
+        {
+            // 비활성화 여부로 사용 가능한 몬스터를 판단
+            if (_monster.activeSelf == false)
+            {
+                // 몬스터 반환
+                return _monster;
+            }
+        }
+        return null;
+    }
+
 }
