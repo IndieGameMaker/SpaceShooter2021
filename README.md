@@ -5,7 +5,9 @@
 
 ## [절대강좌! 유니티] 프로젝트 소스코드
 
-### SpaceShooter
+### SpaceShooter 프로젝트 장별 완성 프로젝트
+
+유니티 2021.1.7f1
 
 - [2장](https://github.com/IndieGameMaker/SpaceShooter2021/releases/tag/2장)
 - [3장](https://github.com/IndieGameMaker/SpaceShooter2021/releases/tag/3장)
