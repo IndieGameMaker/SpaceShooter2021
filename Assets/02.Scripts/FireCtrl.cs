@@ -49,6 +49,7 @@ public class FireCtrl : MonoBehaviour
                                 1 << 6))            // 감지하는 범위인 레이어 마스크
             {
                 Debug.Log($"Hit={hit.transform.name}");
+                hit.transform.GetComponent<MonsterCtrl>()?.OnDamage(hit.point, hit.normal);
             }
         }
     }
@@ -56,7 +57,7 @@ public class FireCtrl : MonoBehaviour
     void Fire()
     {
         // Bullet 프리팹을 동적으로 생성(생성할 객체, 위치, 회전)
-        // Instantiate(bullet, firePos.position, firePos.rotation);
+        Instantiate(bullet, firePos.position, firePos.rotation);
         // 총소리 발생
         audio.PlayOneShot(fireSfx, 1.0f);
         // 총구 화염 효과 코루틴 함수 호출
