@@ -186,25 +186,26 @@ public class MonsterCtrl : MonoBehaviour
         {
             // 충돌한 총알을 삭제
             Destroy(coll.gameObject);
-            // 피격 리액션 애니메이션 실행
-            anim.SetTrigger(hashHit);
+        }
+    }
 
-            // 총알의 충돌 지점
-            Vector3 pos = coll.GetContact(0).point;
-            // 총알의 충돌 지점의 법선 벡터
-            Quaternion rot = Quaternion.LookRotation(-coll.GetContact(0).normal);
-            // 혈흔 효과를 생성하는 함수 호출
-            ShowBloodEffect(pos, rot);
+    // 레이캐스트를 사용해 데미지를 입히는 로직
+    public void OnDamage(Vector3 pos, Vector3 normal)
+    {
+        // 피격 리액션 애니메이션 실행
+        anim.SetTrigger(hashHit);
+        Quaternion rot = Quaternion.LookRotation(normal);
 
-            // 몬스터의 hp 차감
-            hp -= 10;
+        // 혈흔 효과를 생성하는 함수 호출
+        ShowBloodEffect(pos, rot);
 
-            if (hp <= 0)
-            {
-                state = State.DIE;
-                // 몬스터가 사망했을 때 50점을 추가
-                GameManager.instance.DisplayScore(50);
-            }
+        // 몬스터의 hp 차감
+        hp -= 30;
+        if (hp <= 0)
+        {
+            state = State.DIE;
+            // 몬스터가 사망했을 때 50점을 추가
+            GameManager.instance.DisplayScore(50);
         }
     }
 
