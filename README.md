@@ -1,7 +1,7 @@
 # 절대강좌! 유니티 - 프로젝트
 
 ## 리소스 파일
-- [Resources.zip]()
+- [Resources](https://1drv.ms/u/s!Asker0nVo1TS9NEBlRjDVf3Bj8Z5Qg?e=AU7ofy)
 
 ## [절대강좌! 유니티] 프로젝트 소스코드
 
