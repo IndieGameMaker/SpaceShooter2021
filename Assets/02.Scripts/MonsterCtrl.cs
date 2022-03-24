@@ -190,6 +190,9 @@ public class MonsterCtrl : MonoBehaviour
                     hp = 100;
                     isDie = false;
 
+                    // 다시 부활한 후에 IDLE 상태로 시작하기 위해 설정
+                    state = State.IDLE;
+
                     // 몬스터의 Collider 컴포넌트 활성화
                     GetComponent<CapsuleCollider>().enabled = true;
                     // 몬스터를 비활성화
