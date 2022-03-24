@@ -21,9 +21,6 @@
 # Using Git LFS
 # Add diff=lfs merge=lfs to the binary files
 
-# Lighting Data is Binary
-*LightingData*.asset binary
-
 # Unity LFS
 *.cubemap            binary
 *.unitypackage       binary
@@ -126,3 +123,5 @@
 # Spine export file for Unity
 *.skel.bytes        binary
 
+# Lighting Data is Binary
+*LightingData*.asset binary
