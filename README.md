@@ -7,7 +7,7 @@
 
 ### SpaceShooter 프로젝트 장별 완성 프로젝트
 
-[최종 프로젝트 리포지토리](https://github.com/IndieGameMaker/SpaceShooter2021)
+[최종 프로젝트 리포지토리 (유니티 2021.2.13f)](https://github.com/IndieGameMaker/SpaceShooter2021)
 
 프로젝트에 사용된 버전 : 유니티 2021.1.7f1
 
