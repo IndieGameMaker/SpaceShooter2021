@@ -21,6 +21,9 @@
 # Using Git LFS
 # Add diff=lfs merge=lfs to the binary files
 
+# Lighting Data is Binary
+*LightingData*.asset binary
+
 # Unity LFS
 *.cubemap            binary
 *.unitypackage       binary
